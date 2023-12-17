@@ -1,0 +1,18 @@
+<div>
+    <section>
+        <h2>Welcome to our College</h2>
+        <p>This is a basic homepage for our college. Feel free to explore the website using the navigation menu above.</p>
+    </section>
+
+    <footer>
+        &copy; 2023 College Name. All rights reserved.
+    </footer>
+    <ul *ngFor="let student of students">
+        <li *ngIf="student.mark >= 50">
+            <p>{{student.name}}, {{student.mark}}</p>
+        </li>
+        <li *ngIf="student.mark < 50" [ngStyle]="{'background-color': 'red'}">
+            <p>{{student.name}}, {{student.mark}}</p>
+        </li>
+    </ul>
+</div>
