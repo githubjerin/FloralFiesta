@@ -6,8 +6,8 @@ class AuthenticationButton extends StatelessWidget {
   const AuthenticationButton({
     required this.label,
     required this.onPressed,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final String label;
   final Function() onPressed;
@@ -27,7 +27,10 @@ class AuthenticationButton extends StatelessWidget {
       onPressed: onPressed,
       child: Text(
         label,
-        style: GoogleFonts.poppins(fontSize: 16.0),
+        style: GoogleFonts.poppins(
+            fontSize: 16.0,
+            color: kGinColor,
+        ),
       ),
     );
   }

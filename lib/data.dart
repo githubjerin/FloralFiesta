@@ -9,7 +9,7 @@ List<Plant> recommended = [
     plantPrice: 80.0,
     stars: 4.0,
     metrics: PlantMetrics('8.2"', '52%', '4.2"'),
-    image: 'images/snake_plant.png',
+    image: 'assets/images/snake_plant.png',
   ),
   Plant(
     plantType: 'Indoor',
@@ -17,7 +17,7 @@ List<Plant> recommended = [
     plantPrice: 480.0,
     stars: 3.5,
     metrics: PlantMetrics('8.2"', '52%', '4.2"'),
-    image: 'images/Palm.png',
+    image: 'assets/images/Palm.png',
   ),
   Plant(
     plantType: 'Outdoor',
@@ -25,7 +25,7 @@ List<Plant> recommended = [
     plantPrice: 600.0,
     stars: 3.0,
     metrics: PlantMetrics('8.2"', '52%', '4.2"'),
-    image: 'images/ficuss_alii.png',
+    image: 'assets/images/ficuss_alii.png',
   ),
   Plant(
     plantType: 'Outdoor',
@@ -33,7 +33,7 @@ List<Plant> recommended = [
     plantPrice: 4000.0,
     stars: 4.0,
     metrics: PlantMetrics('8.2"', '52%', '4.2"'),
-    image: 'images/money_bonsai.png',
+    image: 'assets/images/money_bonsai.png',
   ),
   Plant(
     plantType: 'Outdoor',
@@ -41,14 +41,14 @@ List<Plant> recommended = [
     plantPrice: 2000.0,
     stars: 3.5,
     metrics: PlantMetrics('8.2"', '52%', '4.2"'),
-    image: 'images/Juniper_Bonsai.png',
+    image: 'assets/images/Juniper_Bonsai.png',
   ),
 ];
 
 List<ViewHistory> viewed = [
-  ViewHistory('Calathea', 'It\'s spines don\'t grow.', 'images/calathea.jpg'),
-  ViewHistory('Cactus', 'It has spines.', 'images/cactus.jpg'),
-  ViewHistory('Stephine', 'It\'s spines do grow.', 'images/stephine_2.jpg'),
+  ViewHistory('Calathea', 'It\'s spines don\'t grow.', 'assets/images/calathea.jpg'),
+  ViewHistory('Cactus', 'It has spines.', 'assets/images/cactus.jpg'),
+  ViewHistory('Stephine', 'It\'s spines do grow.', 'assets/images/stephine.jpg'),
 ];
 
 List<CartItem> cartItems = [
@@ -57,7 +57,7 @@ List<CartItem> cartItems = [
       plantType: 'Indoor',
       plantName: 'Calathea',
       plantPrice: 100,
-      image: 'images/calathea.jpg',
+      image: 'assets/images/calathea.jpg',
       stars: 3.5,
       metrics: PlantMetrics('', '', ''),
     ),
@@ -68,29 +68,7 @@ List<CartItem> cartItems = [
       plantType: 'Indoor',
       plantName: 'Cactus',
       plantPrice: 100,
-      image: 'images/cactus.jpg',
-      stars: 3.5,
-      metrics: PlantMetrics('', '', ''),
-    ),
-    2,
-  ),
-  CartItem(
-    Plant(
-      plantType: 'Indoor',
-      plantName: 'Calathea',
-      plantPrice: 100,
-      image: 'images/calathea.jpg',
-      stars: 3.5,
-      metrics: PlantMetrics('', '', ''),
-    ),
-    2,
-  ),
-  CartItem(
-    Plant(
-      plantType: 'Indoor',
-      plantName: 'Calathea',
-      plantPrice: 100,
-      image: 'images/calathea.jpg',
+      image: 'assets/images/cactus.jpg',
       stars: 3.5,
       metrics: PlantMetrics('', '', ''),
     ),

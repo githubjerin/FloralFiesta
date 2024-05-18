@@ -8,7 +8,7 @@ import 'package:floral_fiesta/Pages/main_page.dart';
 import 'package:floral_fiesta/Pages/signup_page.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  const LoginPage({super.key});
 
   static const String id = 'LoginPage';
 
@@ -33,26 +33,9 @@ class _LoginPageState extends State<LoginPage> {
           ClipPath(
             clipper: ImageClipper(),
             child: Image.asset(
-              'images/leaves.jpg',
+              'assets/images/leaves.jpg',
               alignment: Alignment.topCenter,
               fit: BoxFit.fitWidth,
-            ),
-          ),
-
-          Positioned(
-            top: 30.0,
-            left: 20.0,
-            child: CircleAvatar(
-              backgroundColor: Colors.white,
-              radius: 20.0,
-              child: IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.arrow_back_ios_new,
-                  color: kDarkGreenColor,
-                  size: 24.0,
-                ),
-              ),
             ),
           ),
 
@@ -75,7 +58,15 @@ class _LoginPageState extends State<LoginPage> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Text(
-                            'Welcome Back',
+                            'Welcome To',
+                            style: GoogleFonts.poppins(
+                              fontSize: 32.0,
+                              fontWeight: FontWeight.w600,
+                              color: kDarkGreenColor,
+                            ),
+                          ),
+                          Text(
+                            'Floral Fiesta',
                             style: GoogleFonts.poppins(
                               fontSize: 32.0,
                               fontWeight: FontWeight.w600,
@@ -170,7 +161,7 @@ class _LoginPageState extends State<LoginPage> {
                               label: 'Log In',
                               onPressed: () {
                                 if (username.toLowerCase() == 'admin' &&
-                                    password == 'idk123!') {
+                                    password == 'admin') {
                                   Navigator.pushNamed(context, MainPage.id);
                                 }
                               },

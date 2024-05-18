@@ -41,7 +41,7 @@ class _MainPageState extends State<MainPage> {
               child: CircleAvatar(
                 backgroundColor: kDarkGreenColor,
                 radius: 22.0,
-                backgroundImage: const AssetImage('images/Dhairye.jpg'),
+                backgroundImage: const AssetImage('assets/images/groot.jpeg'),
               ),
               onTap: () {},
             ),

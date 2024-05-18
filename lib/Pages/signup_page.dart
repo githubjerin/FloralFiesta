@@ -5,7 +5,7 @@ import 'package:floral_fiesta/components/custom_text_field.dart';
 import 'package:floral_fiesta/constants.dart';
 
 class SignupPage extends StatelessWidget {
-  const SignupPage({Key? key}) : super(key: key);
+  const SignupPage({super.key});
 
   static String id = 'SignupPage';
 

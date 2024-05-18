@@ -4,7 +4,7 @@ import 'package:floral_fiesta/constants.dart';
 import 'package:floral_fiesta/models/plant.dart';
 
 class PlantDetails extends StatefulWidget {
-  const PlantDetails({required this.plant, Key? key}) : super(key: key);
+  const PlantDetails({required this.plant, super.key});
 
   final Plant plant;
 

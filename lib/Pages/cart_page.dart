@@ -5,7 +5,7 @@ import 'package:floral_fiesta/data.dart';
 import 'package:floral_fiesta/models/cart_item.dart';
 
 class CartPage extends StatefulWidget {
-  const CartPage({Key? key}) : super(key: key);
+  const CartPage({super.key});
 
   static String id = "CartPage";
 

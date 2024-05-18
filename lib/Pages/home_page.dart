@@ -6,7 +6,7 @@ import 'package:floral_fiesta/data.dart';
 import 'package:floral_fiesta/Pages/plant_details_page.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   static const String id = 'HomePage';
 
@@ -193,8 +193,8 @@ class RecentlyViewedCard extends StatelessWidget {
     required this.plantName,
     required this.plantInfo,
     required this.image,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final String plantName;
   final String plantInfo;
@@ -249,8 +249,8 @@ class PlantCard extends StatelessWidget {
     required this.plantPrice,
     required this.image,
     required this.onTap,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final String plantType;
   final String plantName;
@@ -367,11 +367,11 @@ class PlantCard extends StatelessWidget {
 
 class CategorySelector extends StatelessWidget {
   const CategorySelector({
-    Key? key,
+    super.key,
     required this.selected,
     required this.categories,
     required this.onTap,
-  }) : super(key: key);
+  });
 
   final int selected;
   final List<String> categories;
