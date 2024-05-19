@@ -1,17 +1,17 @@
-import 'package:floral_fiesta/Pages/order_confirmation.dart';
 import 'package:floral_fiesta/Pages/payment_page.dart';
-import 'package:floral_fiesta/Pages/step_indicator.dart';
 import 'package:floral_fiesta/models/cart_item.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+import '../constants.dart';
 
 class OrderSummaryPage extends StatefulWidget {
   final List<CartItem> cartItems;
 
-  const OrderSummaryPage({Key? key, required this.cartItems}) : super(key: key);
+  const OrderSummaryPage({super.key, required this.cartItems});
 
   @override
-  _OrderSummaryPageState createState() => _OrderSummaryPageState();
+  State<OrderSummaryPage> createState() => _OrderSummaryPageState();
 }
 
 class _OrderSummaryPageState extends State<OrderSummaryPage> {
@@ -45,11 +45,11 @@ class _OrderSummaryPageState extends State<OrderSummaryPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               StepIndicator(currentStep: currentStep),
-              SizedBox(height: 25,),
-              Text("APPLY PROMO CODE",
+              const SizedBox(height: 25,),
+              const Text("APPLY PROMO CODE",
               style: TextStyle(fontWeight: FontWeight.w600),),
-              SizedBox(height: 15,),
-              TextField(
+              const SizedBox(height: 15,),
+              const TextField(
                     decoration: InputDecoration(
                     labelText: 'Enter promo code', 
                     hintText: 'Promo code', 
@@ -61,15 +61,15 @@ class _OrderSummaryPageState extends State<OrderSummaryPage> {
                     labelStyle: TextStyle(color: Color.fromARGB(255, 4, 100, 7)),
                 ),
               ),
-              SizedBox(height: 15,),
+              const SizedBox(height: 15,),
               Container(
                 height: 40,
                 decoration: BoxDecoration(
-                     color: Colors.green,
+                     color: kDarkGreenColor,
                      borderRadius: BorderRadius.circular(15),
                 ),
                
-                child:Row(
+                child:const Row(
                     children: [
                       Expanded(
                         child: Center(child: Text("APPLY CODE",
@@ -83,8 +83,8 @@ class _OrderSummaryPageState extends State<OrderSummaryPage> {
                     ],
                   ),
               ),
-              SizedBox(height: 25,),
-              Text(
+              const SizedBox(height: 25,),
+              const Text(
                 'Order Details',
                 style: TextStyle(
                   color: Color.fromARGB(255, 4, 100, 7),
@@ -92,9 +92,9 @@ class _OrderSummaryPageState extends State<OrderSummaryPage> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Container(
-                  color: Color.fromARGB(255, 222, 232, 226),
+                  color: const Color.fromARGB(255, 222, 232, 226),
                   child: ListView.builder(
                   shrinkWrap: true,
                   itemCount: widget.cartItems.length,
@@ -108,12 +108,12 @@ class _OrderSummaryPageState extends State<OrderSummaryPage> {
                       fit: BoxFit.cover,
                       ),
                       title: Text(cartItem.plant.plantName,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontWeight: FontWeight.w500,
                       ),),
                       subtitle: Row(
                         children: [
-                          Text('Quantity: ',
+                          const Text('Quantity: ',
                           style: TextStyle(
                             color: Color.fromARGB(255, 4, 100, 7),
                             
@@ -136,7 +136,7 @@ class _OrderSummaryPageState extends State<OrderSummaryPage> {
                         ],
                       ),
                       trailing: Text('\₹${cartItem.plant.plantPrice * quantities[index]}',
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w600
                       ),),
@@ -144,10 +144,10 @@ class _OrderSummaryPageState extends State<OrderSummaryPage> {
                   },
                 ),
               ),
-              Divider(),
+              const Divider(),
               Container(
                 decoration: BoxDecoration(
-                    color: Colors.green,
+                    color: kDarkGreenColor,
                     borderRadius: BorderRadius.circular(5)
                 ),       
                 height: 50,
@@ -156,7 +156,7 @@ class _OrderSummaryPageState extends State<OrderSummaryPage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
+                      const Text(
                         'Total Amount:',
                         style: TextStyle(
                           fontSize: 18,
@@ -166,7 +166,7 @@ class _OrderSummaryPageState extends State<OrderSummaryPage> {
                       ),
                       Text(
                         '\₹$totalAmount',
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Colors.white,
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
@@ -176,32 +176,43 @@ class _OrderSummaryPageState extends State<OrderSummaryPage> {
                   ),
                 ),
               ),
-              SizedBox(height: 20,),
-              Container(
+              const SizedBox(height: 20,),
+              SizedBox(
                 height: 50,
-                decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 4, 100, 7),
-                  borderRadius: BorderRadius.circular(5)
-                ),
-                child: 
-                GestureDetector(
-                  onTap: _navigateToOrderSuccessPage,
-                  child: Row(
-                    
+                child:
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    // primary: kDarkGreenColor,
+                    elevation: 20.0,
+                    textStyle: GoogleFonts.poppins(
+                      fontSize: 15.0,
+                      fontWeight: FontWeight.w500,
+                    ),
+                    backgroundColor: kDarkGreenColor,
+                    disabledForegroundColor: kGinColor,
+                    disabledBackgroundColor: kGinColor,
+                    shadowColor: kGinColor,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12.0),
+                    ),
+                    padding: const EdgeInsets.symmetric(vertical: 12.0),
+                  ),
+                  child: const Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Expanded(
-                        
-                        child: Center(child: Text("Continue",
-                        textAlign: TextAlign.center,
+                      SizedBox(width: 10.0),
+                      Text(
+                        'Confirm',
                         style: TextStyle(
-                          fontWeight: FontWeight.bold,
                           color: Colors.white
                         ),
-                        )),
-                      )
+                      ),
                     ],
                   ),
-                ),
+                  onPressed: () {
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const PaymentPage()));
+                  },
+                )
               ),
             ],
           ),
@@ -209,16 +220,12 @@ class _OrderSummaryPageState extends State<OrderSummaryPage> {
       ),
     );
   }
-
-  void _navigateToOrderSuccessPage() {
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const PaymentPage()));
-  }
 }
 
 class StepIndicator extends StatelessWidget {
   final int currentStep;
 
-  const StepIndicator({Key? key, required this.currentStep}) : super(key: key);
+  const StepIndicator({super.key, required this.currentStep});
 
   @override
   Widget build(BuildContext context) {
@@ -240,10 +247,10 @@ class StepIndicator extends StatelessWidget {
           backgroundColor: isActive ? const Color.fromARGB(255, 4, 100, 7) : Colors.grey,
           child: Text(
             stepNumber,
-            style: TextStyle(color: Colors.white),
+            style: const TextStyle(color: Colors.white),
           ),
         ),
-        SizedBox(height: 5),
+        const SizedBox(height: 5),
         Text(
           stepTitle,
           style: TextStyle(

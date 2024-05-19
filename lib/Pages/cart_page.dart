@@ -233,8 +233,8 @@ class CartItemCard extends StatefulWidget {
   const CartItemCard({
     required this.item,
     required this.onQuantityChanged,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final CartItem item;
   final Function(int) onQuantityChanged;

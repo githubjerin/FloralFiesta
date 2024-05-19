@@ -5,7 +5,7 @@ import 'package:floral_fiesta/Pages/cart_page.dart';
 import 'package:floral_fiesta/Pages/home_page.dart';
 
 class MainPage extends StatefulWidget {
-  const MainPage({Key? key}) : super(key: key);
+  const MainPage({super.key});
 
   static const String id = 'MainPage';
 

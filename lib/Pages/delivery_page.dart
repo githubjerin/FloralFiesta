@@ -1,8 +1,8 @@
-import 'package:floral_fiesta/Pages/order_confirmation.dart';
 import 'package:floral_fiesta/Pages/ordersummary_page.dart';
-import 'package:floral_fiesta/Pages/payment_page.dart';
 import 'package:floral_fiesta/data.dart';
+import 'package:floral_fiesta/models/address.dart';
 import 'package:flutter/material.dart';
+import 'package:floral_fiesta/data.dart';
 
 class DeliveryPage extends StatefulWidget {
   const DeliveryPage({super.key});
@@ -12,18 +12,13 @@ class DeliveryPage extends StatefulWidget {
 }
 
 class _DeliveryPageState extends State<DeliveryPage> {
-  int currentStep = 1; 
-  List<String> addresses = [
-    'Jerin B S, Door no:5, Gandhi Nagar, Nehru Main Street, Porur, Tamil Nadu',
-    'Jeciyazhini J, Kamaraj Nagar, 5/1 Street, Salem, Tamil Nadu',
-    'Keerthana J, Door no: 3, Ganapathy Koil Street, Chennai, Tamil Nadu'
-  ];
+  int currentStep = 1;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "Select Address",
           style: TextStyle(
             fontWeight: FontWeight.bold,
@@ -35,33 +30,33 @@ class _DeliveryPageState extends State<DeliveryPage> {
         child: Column(
           children: [
             StepIndicator(currentStep: currentStep),
-            SizedBox(height: 25,),
+            const SizedBox(height: 25,),
             Container(
               
               decoration: BoxDecoration( 
-                color: Color.fromARGB(255, 222, 232, 226),
+                color: const Color.fromARGB(255, 222, 232, 226),
                 borderRadius: BorderRadius.circular(10)
               ),
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               child: GestureDetector(
                 onTap: (){
                   _showAddressInputDialog(context);
                 },
               
-              child: Row(
+              child: const Row(
                 children: [
                   Icon(Icons.add),
                   Padding(
-                    padding: const EdgeInsets.only(left: 10.0),
+                    padding: EdgeInsets.only(left: 10.0),
                     child: Text("Add a new address"),
                   )
                 ],
               ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Expanded(child: AddressList(addresses: addresses)),
-            DeliverHereButton(),
+            const DeliverHereButton(),
           ],
         ),
       ),
@@ -72,7 +67,7 @@ class _DeliveryPageState extends State<DeliveryPage> {
 class StepIndicator extends StatelessWidget {
   final int currentStep;
 
-  const StepIndicator({Key? key, required this.currentStep}) : super(key: key);
+  const StepIndicator({super.key, required this.currentStep});
 
   @override
   Widget build(BuildContext context) {
@@ -94,10 +89,10 @@ class StepIndicator extends StatelessWidget {
           backgroundColor: isActive ? const Color.fromARGB(255, 4, 100, 7) : Colors.grey,
           child: Text(
             stepNumber,
-            style: TextStyle(color: Colors.white),
+            style: const TextStyle(color: Colors.white),
           ),
         ),
-        SizedBox(height: 5),
+        const SizedBox(height: 5),
         Text(
           stepTitle,
           style: TextStyle(
@@ -111,12 +106,12 @@ class StepIndicator extends StatelessWidget {
 }
 
 class AddressList extends StatefulWidget {
-  final List<String> addresses;
+  final List<Address> addresses;
 
-  const AddressList({Key? key, required this.addresses}) : super(key: key);
+  const AddressList({super.key, required this.addresses});
 
   @override
-  _AddressListState createState() => _AddressListState();
+  State<AddressList> createState() => _AddressListState();
 }
 
 class _AddressListState extends State<AddressList> {
@@ -135,7 +130,7 @@ class _AddressListState extends State<AddressList> {
           },
           child: Card(
             elevation: 3,
-            color: _selectedIndex == index ? Color.fromARGB(255, 222, 232, 226) : null, 
+            color: _selectedIndex == index ? const Color.fromARGB(255, 222, 232, 226) : null,
             child: Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
@@ -145,17 +140,19 @@ class _AddressListState extends State<AddressList> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        widget.addresses[index].split(",")[0],
-                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                        addresses[index].receiverName,
+                        style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                       ),
-                      Text(
+                      const Text(
                         "Edit",
                         style: TextStyle(color: Colors.green),
                       ),
                     ],
                   ),
-                  SizedBox(height: 10),
-                  Text(widget.addresses[index]),
+                  const SizedBox(height: 10),
+                  Text(
+                      "${addresses[index].address} Ph: ${addresses[index].mobileNumber}"
+                  ),
                 ],
               ),
             ),
@@ -166,12 +163,12 @@ class _AddressListState extends State<AddressList> {
   }
 }
 
-
-
 class DeliverHereButton extends StatelessWidget {
+  const DeliverHereButton({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: double.infinity,
       child: ElevatedButton(
         onPressed: () {
@@ -179,12 +176,12 @@ class DeliverHereButton extends StatelessWidget {
           // Navigator.of(context).push(MaterialPageRoute(builder: (context) => PaymentPage()));
         },
         style: ElevatedButton.styleFrom(
-          backgroundColor: Color.fromARGB(255, 4, 100, 7), 
-          padding: EdgeInsets.symmetric(vertical: 16.0), 
+          backgroundColor: const Color.fromARGB(255, 4, 100, 7),
+          padding: const EdgeInsets.symmetric(vertical: 16.0),
         ),
         child: 
         
-        Text(
+        const Text(
           'Deliver Here',
           style: TextStyle(
             color: Colors.white,
@@ -200,13 +197,13 @@ void _showAddressInputDialog(BuildContext context) {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text("Add New Address",
+          title: const Text("Add New Address",
           style: TextStyle(
             color: Color.fromARGB(255, 4, 100, 7),
             
           ),),
-          backgroundColor: Color.fromARGB(255, 222, 232, 226),
-          content: SingleChildScrollView(
+          backgroundColor: const Color.fromARGB(255, 222, 232, 226),
+          content: const SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -233,7 +230,7 @@ void _showAddressInputDialog(BuildContext context) {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text('Cancel',
+              child: const Text('Cancel',
               style: TextStyle(
                 color: Color.fromARGB(255, 4, 100, 7)
               ),),
@@ -242,7 +239,7 @@ void _showAddressInputDialog(BuildContext context) {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text('Save',
+              child: const Text('Save',
               style: TextStyle(
                 color: Color.fromARGB(255, 4, 100, 7)
               ),),

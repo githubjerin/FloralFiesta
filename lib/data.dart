@@ -1,6 +1,7 @@
 import 'package:floral_fiesta/models/cart_item.dart';
 import 'package:floral_fiesta/models/plant.dart';
 import 'package:floral_fiesta/models/recently_viewed.dart';
+import 'package:floral_fiesta/models/address.dart';
 
 List<Plant> recommended = [
   Plant(
@@ -74,4 +75,10 @@ List<CartItem> cartItems = [
     ),
     2,
   ),
+];
+
+List<Address> addresses = [
+  Address(receiverName: "Keerthana J", address: "Door no: 3, Ganapathy Koil Street, Chennai, Tamil Nadu", mobileNumber: 7395930680),
+  Address(receiverName: "Jerin BS", address: "Door no:5, Gandhi Nagar, Nehru Main Street, Porur, Tamil Nadu", mobileNumber: 6382261276),
+  Address(receiverName: "Jeciyazhini J", address: "Kamaraj Nagar, 5/1 Street, Salem, Tamil Nadu", mobileNumber: 8248689565),
 ];
