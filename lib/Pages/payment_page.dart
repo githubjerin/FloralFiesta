@@ -259,7 +259,7 @@ class PaymentOptionContainer extends StatelessWidget {
         value: value,
         groupValue: groupValue,
         onChanged: onChanged,
-        activeColor: Color.fromARGB(255, 4, 100, 7), // Customize the color of the radio button
+        activeColor: Color.fromARGB(255, 4, 100, 7), 
       ),
     );
   }
@@ -293,8 +293,8 @@ class AddGiftCardCheckbox extends StatelessWidget {
         ),
         value: isChecked,
         onChanged: onChanged,
-        activeColor: Color.fromARGB(255, 4, 100, 7), // Customize the color of the checkbox
-        controlAffinity: ListTileControlAffinity.leading, // Place the checkbox before the text
+        activeColor: Color.fromARGB(255, 4, 100, 7), 
+        controlAffinity: ListTileControlAffinity.leading, 
       ),
     );
   }

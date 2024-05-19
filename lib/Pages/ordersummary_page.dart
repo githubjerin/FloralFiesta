@@ -56,7 +56,7 @@ class _OrderSummaryPageState extends State<OrderSummaryPage> {
                     hintStyle: TextStyle(color: Colors.grey), 
                     border: OutlineInputBorder(), 
                     focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.green), // Color of the border when focused
+                          borderSide: BorderSide(color: Colors.green), 
                     ),
                     labelStyle: TextStyle(color: Color.fromARGB(255, 4, 100, 7)),
                 ),
